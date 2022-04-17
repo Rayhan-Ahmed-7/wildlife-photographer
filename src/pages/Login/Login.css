@@ -1,0 +1,6 @@
+@media only screen and (max-width:768px){
+    .login-form,
+    .signup-form{
+        width:80% !important;
+    }
+}

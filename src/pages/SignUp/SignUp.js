@@ -26,7 +26,7 @@ const SignUp = () => {
         navigate('/');
     }
     return (
-        <div className='container w-50 mx-auto mt-5'>
+        <div className='container w-50 signup-form mx-auto mt-5'>
             <h2 className='text-center text-primary'>Sign Up</h2>
             <Form onSubmit={handleSignUp}>
                 <Form.Group className="mb-3" controlId="formBasicName">

@@ -7,6 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css';
 const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -37,7 +38,7 @@ const SignUp = () => {
         }
     }
     return (
-        <div className='container w-50 mx-auto mt-5'>
+        <div className='container w-50 login-form mx-auto mt-5'>
             <h2 className='text-center text-primary'>Login</h2>
             <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
