@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
-import { Button, Form, ToastContainer } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 const SignUp = () => {
     const navigate = useNavigate();
@@ -47,13 +49,14 @@ const SignUp = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
                 </Form.Group>
+                {loading?<Loading></Loading>:''}
                 <p className='text-danger'>{error?.message}</p>
                 <Button className='d-block w-50 mx-auto btn btn-primary' variant="primary" type="submit">
                     Login
                 </Button>
             </Form>
-            <p className='text-center mt-3'>New to Wild life?<Link to='/signup'>Please Sign Up</Link></p>
-            <p className='text-center'>forget password.?<span className='text-primary cursor-pointer' onClick={resetPassword}>Reset password</span></p>
+            <p className='text-center mt-3'>New to Wild life?<Link className='text-decoration-none ms-2' to='/signup'>Please Sign Up</Link></p>
+            <p className='text-center'>forget password.?<span className='text-primary cursor-pointer ms-2' onClick={resetPassword}>Reset password</span></p>
             <SocialLogin></SocialLogin>
             <ToastContainer />
         </div>
