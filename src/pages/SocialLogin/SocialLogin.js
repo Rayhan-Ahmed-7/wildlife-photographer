@@ -3,6 +3,7 @@ import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/a
 import { useNavigate } from 'react-router-dom';
 import google from '../../images/social icons/google-logo.png';
 import github from '../../images/social icons/github-logo.png';
+import auth from '../../firebase.init';
 const SocialLogin = () => {
     const [signInWithGoogle, googleUser, gloading, gerror] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, gitoading, giterror] = useSignInWithGithub(auth);
