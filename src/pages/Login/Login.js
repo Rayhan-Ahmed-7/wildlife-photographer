@@ -18,17 +18,11 @@ const SignUp = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         console.log(email,password);
-        signInWithEmailAndPassword(email,password)
-        .then((user)=>{
-            console.log(user);
-        })
+        signInWithEmailAndPassword(email,password);
     }
 
     if(user){
         navigate(from,{replace:true});
-    }
-    const navigateToSignUp = ()=>{
-        navigate('/signup');
     }
     
     const resetPassword = async()=>{
@@ -58,8 +52,8 @@ const SignUp = () => {
                     Login
                 </Button>
             </Form>
-            <p>New to Wild life?<Link to='/signup'>Please Sign Up</Link></p>
-            <p>forget password.?<span className='text-primary cursor-pointer' onClick={resetPassword}>Reset password</span></p>
+            <p className='text-center mt-3'>New to Wild life?<Link to='/signup'>Please Sign Up</Link></p>
+            <p className='text-center'>forget password.?<span className='text-primary cursor-pointer' onClick={resetPassword}>Reset password</span></p>
             <SocialLogin></SocialLogin>
             <ToastContainer />
         </div>

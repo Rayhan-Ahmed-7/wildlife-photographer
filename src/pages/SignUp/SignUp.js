@@ -6,6 +6,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 import { Button, Form } from 'react-bootstrap';
 const SignUp = () => {
     const navigate = useNavigate();
+    const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const [
@@ -17,22 +18,25 @@ const SignUp = () => {
       const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
     const handleSignUp = async e =>{
         e.preventDefault()
-        const name = e.target.name.value;
-        const email = e.target.email.value;
-        const password = e.target.password.value;
+        const name = nameRef.current.value;
+        const email = emailRef.current.value;
+        const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email,password);
         await updateProfile({displayName:name});
-        navigate('/home');
+        navigate('/');
     }
     return (
         <div className='container w-50 mx-auto mt-5'>
             <h2 className='text-center text-primary'>Sign Up</h2>
             <Form onSubmit={handleSignUp}>
+                <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control ref={nameRef} type="text" placeholder="Enter your name" required/>
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required/>
                 </Form.Group>
-
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
@@ -42,7 +46,7 @@ const SignUp = () => {
                     Login
                 </Button>
             </Form>
-            <p>Already Signed up.?<Link to='/login'>Login</Link></p>
+            <p className='text-center mt-3'>Already Signed up.?<Link to='/login'>Login</Link></p>
             <SocialLogin></SocialLogin>
         </div>
     );

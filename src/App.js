@@ -10,13 +10,18 @@ import About from './pages/About/About';
 import Footer from './pages/Footer/Footer';
 import NotFound from './pages/NotFound/NotFound';
 import SignUp from './pages/SignUp/SignUp';
+import RequireAuth from './pages/RequireAuth/RequireAuth';
 function App() {
   return (
     <div className="App">
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/checkout' element={<CheckOut></CheckOut>}></Route>
+        <Route path='/checkout' element={
+          <RequireAuth>
+            <CheckOut></CheckOut>
+          </RequireAuth>
+        }></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>

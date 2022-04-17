@@ -5,16 +5,16 @@ import google from '../../images/social icons/google-logo.png';
 import github from '../../images/social icons/github-logo.png';
 import auth from '../../firebase.init';
 const SocialLogin = () => {
-    const [signInWithGoogle, googleUser, gloading, gerror] = useSignInWithGoogle(auth);
-    const [signInWithGithub, githubUser, gitoading, giterror] = useSignInWithGithub(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [signInWithGithub, githubUser, gitLoading, gitError] = useSignInWithGithub(auth);
     const navigate = useNavigate();
     let errorElement;
-    if(gerror || giterror){
+    if (googleError || gitError) {
         errorElement = <div>
-                <p className='text-danger'>Error: {gerror?.message}{giterror?.message}</p>
-            </div>
+            <p className='text-danger'>Error: {googleError?.message}{gitError?.message}</p>
+        </div>
     }
-    if(googleUser || githubUser){
+    if (googleUser || githubUser) {
         navigate('/home');
     }
     return (
@@ -26,11 +26,11 @@ const SocialLogin = () => {
             </div>
             {errorElement}
             <div>
-                <button onClick={()=>signInWithGoogle()} className='btn btn-success w-50 d-block mx-auto mt-2'>
+                <button onClick={() => signInWithGoogle()} className='btn btn-success w-50 d-block mx-auto mt-2'>
                     <img width='30px' src={google} alt="" />
-                    <span className='px-2'>Google Sign In</span> 
+                    <span className='px-2'>Google Sign In</span>
                 </button>
-                <button onClick={()=>signInWithGithub()} className='btn btn-success w-50 d-block mx-auto mt-2'>
+                <button onClick={() => signInWithGithub()} className='btn btn-success w-50 d-block mx-auto mt-2'>
                     <img width='30px' src={github} alt="" />
                     <span className='px-2'>Github Sign In</span>
                 </button>
