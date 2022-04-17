@@ -6,59 +6,65 @@ import birds from '../../../images/service img/birds.jpg';
 import underwater from '../../../images/service img/underwater.jpg';
 import mountains from '../../../images/service img/mountains.jpg';
 import flower from '../../../images/service img/flower.jpg';
+import {BsFillCartCheckFill} from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 const Services = () => {
+    const navigate = useNavigate();
+    const handleCheckOut = ()=>{
+        navigate('/checkout');
+    }
     return (
-        <div>
+        <div className='my-4'>
             <h2 className='text-center mt-4'>My Services</h2>
         <div className='container mx-auto row row-cols-lg-3 row-cols-1'>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={elephants} alt="" />
-                <h3>Animal in their environment</h3>
-                <p>Price:$329</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Animal in their environment</h3>
+                <p className='text-justify pt-2'>Price:$329</p>
+                <p className='text-justify'>Photos that capture animal behaviour in the wild. This could be interactions between multiple individuals, or one going about its day and interacting with its environment.</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={tiger} alt="" />
-                <h3>Animal Portraits</h3>
-                <p>Price:$410</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Animal Portraits</h3>
+                <p className='text-justify pt-2'>Price:$410</p>
+                <p className='text-justify'>Focused on beautiful portraits of wildlife, this category is usually more “traditional.” Favoured by photographers who want to showcase an animal with a straight-forward portrait.</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={birds} alt="" />
-                <h3>Birds</h3>
-                <p>Price:$150</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Birds</h3>
+                <p className='text-justify pt-2'>Price:$150</p>
+                <p className='text-justify'>Focused on beautiful portraits or pack of birds in wildlife, this category is usually more Favoured by photographers</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={nature} alt="" />
-                <h3>Nature</h3>
-                <p>Price:$200</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Nature</h3>
+                <p className='text-justify pt-2'>Price:$200</p>
+                <p className='text-justify'>Conveying the essence of a plant and other natural element or portraying its importance or role in its environment or its means of survival</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={mountains} alt="" />
-                <h3>Mountains</h3>
-                <p>Price:$239</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Mountains</h3>
+                <p className='text-justify pt-2'>Price:$239</p>
+                <p className='text-justify'>Photos that show off the beauty of our natural world through Mountains.</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={underwater} alt="" />
-                <h3>Under Water</h3>
-                <p>Price:$360</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Under Water</h3>
+                <p className='text-justify pt-2'>Price:$360</p>
+                <p className='text-justify'>This category focuses on the underwater world. This could be marine animals, as well as landscapes and macro beneath the waves.</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
             <div className='g-5'>
                 <img className='img-fluid rounded-3' src={flower} alt="" />
-                <h3>Flowers</h3>
-                <p>Price:$120</p>
-                <p></p>
-                <button className='btn btn-danger'>Checkout</button>
+                <h3 className='pt-2'>Flowers</h3>
+                <p className='text-justify pt-2'>Price:$120</p>
+                <p className='text-justify'>Taking beautiful portraits of flowers this very favorite among photographer</p>
+                <button onClick={handleCheckOut} className='btn btn-danger d-flex align-items-center text-uppercase'>Checkout <BsFillCartCheckFill className='ms-2'></BsFillCartCheckFill></button>
             </div>
         </div>
         </div>
