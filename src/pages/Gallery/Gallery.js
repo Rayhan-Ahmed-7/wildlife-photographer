@@ -10,23 +10,23 @@ const Gallery = () => {
     return (
         <div className='container mx-auto my-5'>
             <h2 className='text-center text-uppercase fs-2 my-4'>My Best Shots</h2>
-            <div className='gallery-container row row-cols-lg-3 row-cols-1 justify-content-center g-4'>
-                <div>
+            <div className='gallery-container row row-cols-lg-3 row-cols-1 justify-content-center'>
+                <div className='m-2 p-3 gallery'>
                     <img src={dear} alt="" />
                 </div>
-                <div>
+                <div className='m-2 p-3 gallery'>
                     <img src={tiger} alt="" />
                 </div>
-                <div>
+                <div className='m-2 p-3 gallery'>
                     <img src={bird} alt="" />
                 </div>
-                <div>
+                <div className='m-2 p-3 gallery'>
                     <img src={fish} alt="" />
                 </div>
-                <div>
+                <div className='m-2 p-3 gallery'>
                     <img src={hamster} alt="" />
                 </div>
-                <div>
+                <div className='m-2 p-3 gallery'>
                     <img src={bird2} alt="" />
                 </div>
             </div>
