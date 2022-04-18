@@ -1,0 +1,9 @@
+.gallery-container div{
+    max-width:400px;
+    height: 320px;
+    overflow: hidden;
+}
+.gallery-container img{
+    transform-origin:center;
+    width: 100%;
+}
