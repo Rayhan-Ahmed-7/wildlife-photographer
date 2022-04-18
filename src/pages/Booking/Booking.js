@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CheckOut = () => {
+const Booking = () => {
     const handleBooking = (e)=>{
         e.preventDefault();
         
@@ -21,4 +21,4 @@ const CheckOut = () => {
     );
 };
 
-export default CheckOut;
+export default Booking;

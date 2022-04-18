@@ -8,7 +8,8 @@ Project Name and Link[Rayhan Ahmed Wildlife Photographer](https://wild-life-phot
 * This application is about a wildlife photographer
 * The navbar is fully responsive and interactive
 * The photographer provides some sevices
-* There is private route in this app named checkout
+* There is private route in this app named Booking
+* Booking route has dynamic url for each services
 * You have to login or sign up to go to the private route
 * There is A about section about the photographer
 
