@@ -7,6 +7,7 @@ import { Button, Form } from 'react-bootstrap';
 import Loading from '../Loading/Loading';
 const SignUp = () => {
     const navigate = useNavigate();
+    //creating reference for input fields
     const nameRef = useRef('');
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -17,6 +18,7 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
       const [updateProfile, updating, UpdateError] = useUpdateProfile(auth);
+      //handling signup
     const handleSignUp = async e =>{
         e.preventDefault()
         const name = nameRef.current.value;

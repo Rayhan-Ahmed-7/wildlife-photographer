@@ -11,11 +11,14 @@ import './Login.css';
 const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    // redirect location to check out page
     const from = location.state?.from?.pathname || '/';
+    //sign in with email and password
     const [signInWithEmailAndPassword,user,loading,error] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    //handling form submit
     const handleSubmit = (e)=>{
         e.preventDefault();
         const email = emailRef.current.value;
@@ -23,7 +26,7 @@ const SignUp = () => {
         console.log(email,password);
         signInWithEmailAndPassword(email,password);
     }
-
+    //when user is true navigate user to checkout page
     if(user){
         navigate(from,{replace:true});
     }
@@ -32,9 +35,9 @@ const SignUp = () => {
         const email = emailRef.current.value;
         if(email){
             await sendPasswordResetEmail(email);
-            toast("sent email !");
+            toast("A password reset email sent to your email !");
         }else{
-            toast('please enter your email address');
+            toast('please enter your email address first');
         }
     }
     return (
