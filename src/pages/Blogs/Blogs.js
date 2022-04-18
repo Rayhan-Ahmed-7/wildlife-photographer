@@ -5,15 +5,19 @@ const Blogs = () => {
         <div className='container mx-auto row row-cols-lg-2 row-cols-1 pt-4'>
             <div>
                 <h2 className='text-dark fs-4'>1. what is the Difference between authorization and authentication .?</h2>
-                <p className='row row-cols-2'>
-                    <span className='fs-5 d-block text-center'>Authentication</span>
-                    <span className='fs-5 d-block text-center'>Authorization</span>
-                    <span className='text-justify mb-2 fw-normal'>1. Determines whether users are valid or not or who they claim to be in short identifying the user.</span>
-                    <span className='text-justify mb-2 fw-normal'>1. Determines what resources users can access or not.</span>
-                    <span className='text-justify mb-2 fw-normal'>2. Usually done before authorization.</span>
-                    <span className='text-justify mb-2 fw-normal'>2. Usually done after successful authentication.</span>
-                    <span className='text-justify mb-2 fw-normal'>3. An example: Employees in a company are required to authenticate through the network before accessing their company email.</span>
-                    <span className='text-justify mb-2 fw-normal'>3. An example: After an employee successfully authenticates, the system determines what information the employees are allowed to access.</span>
+                <p className='row row-cols-lg-2 row-cols-1'>
+                    <div>
+                    <p className='fs-5 d-block text-center'>Authentication</p>
+                    <p className='text-justify mb-2 fw-normal'>1. Determines whether users are valid or not or who they claim to be in short identifying the user.</p>
+                    <p className='text-justify mb-2 fw-normal'>2. Usually done before authorization.</p>
+                    <p className='text-justify mb-2 fw-normal'>3. You may have seen Employees in a company are required to authenticate through the network before accessing their company email.</p>
+                    </div>
+                    <div>
+                    <p className='fs-5 d-block text-center'>Authorization</p>
+                    <p className='text-justify mb-2 fw-normal'>1. Determines what resources users can access or not.</p>
+                    <p className='text-justify mb-2 fw-normal'>2. Usually done after successful authentication.</p>
+                    <p className='text-justify mb-2 fw-normal'>3. You may have seen After an employee successfully authenticates, the system determines what information the employees are allowed to access.</p>
+                    </div>
                 </p>
             </div>
             <div>
