@@ -24,6 +24,8 @@ const SignUp = () => {
         const password = passwordRef.current.value;
         await createUserWithEmailAndPassword(email,password);
         await updateProfile({displayName:name});
+    }
+    if(user){
         navigate('/');
     }
     return (

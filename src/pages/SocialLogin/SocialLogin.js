@@ -15,7 +15,7 @@ const SocialLogin = () => {
         </div>
     }
     if (googleUser || githubUser) {
-        navigate('/home');
+        navigate('/');
     }
     return (
         <div className='mb-4'>
