@@ -5,7 +5,6 @@ import nature from '../../../images/service img/nature.jpg';
 import birds from '../../../images/service img/birds.jpg';
 import underwater from '../../../images/service img/underwater.jpg';
 import mountains from '../../../images/service img/mountains.jpg';
-import { useNavigate } from 'react-router-dom';
 import './Services.css';
 import Service from '../Service/Service';
 const data = [
@@ -17,15 +16,12 @@ const data = [
     {id:6,img:underwater,name:"Under Water",description:"This category focuses on the underwater world. This could be marine animals, as well as landscapes and macro beneath the waves.",price:360}
 ]
 const Services = () => {
-    const navigate = useNavigate();
-    const handleCheckOut = ()=>{
-        navigate('/checkout');
-    }
+    
     return (
         <div className='my-4'>
             <h2 className='text-center mt-4'>My Services</h2>
         <div className='services-container mx-auto row justify-content-center'>
-            {data.map(service=><Service key={service.id} service={service} handleCheckOut={handleCheckOut}></Service>)}
+            {data.map(service=><Service key={service.id} service={service}></Service>)}
         </div>
         </div>
     );
