@@ -8,9 +8,9 @@ const SocialLogin = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithGithub, githubUser, gitLoading, gitError] = useSignInWithGithub(auth);
     const navigate = useNavigate();
-    let errorElement;
+    let errorDiv;
     if (googleError || gitError) {
-        errorElement = <div>
+        errorDiv = <div>
             <p className='text-danger'>Error: {googleError?.message}{gitError?.message}</p>
         </div>
     }
@@ -24,13 +24,13 @@ const SocialLogin = () => {
                 <p className='mt-2 px-2'>or</p>
                 <div style={{ height: '1px' }} className='bg-primary w-50'></div>
             </div>
-            {errorElement}
+            {errorDiv}
             <div>
-                <button onClick={() => signInWithGoogle()} className='btn btn-success w-50 d-block mx-auto mt-2'>
+                <button onClick={() => signInWithGoogle()} className='btn btn-success login-form w-50 d-block mx-auto mt-2'>
                     <img width='30px' src={google} alt="" />
                     <span className='px-2'>Google Sign In</span>
                 </button>
-                <button onClick={() => signInWithGithub()} className='btn btn-success w-50 d-block mx-auto mt-2'>
+                <button onClick={() => signInWithGithub()} className='btn btn-success login-form w-50 d-block mx-auto mt-2'>
                     <img width='30px' src={github} alt="" />
                     <span className='px-2'>Github Sign In</span>
                 </button>

@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import auth from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { Button, Form } from 'react-bootstrap';
+import Loading from '../Loading/Loading';
 const SignUp = () => {
     const navigate = useNavigate();
     const nameRef = useRef('');
@@ -41,9 +42,14 @@ const SignUp = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required/>
                 </Form.Group>
+                { loading || updating ?
+                <Loading></Loading>
+                :
+                ''
+                }
                 <p className='text-danger'>{error?.message}</p>
                 <Button className='d-block w-50 mx-auto btn btn-primary' variant="primary" type="submit">
-                    Login
+                    Sign Up
                 </Button>
             </Form>
             <p className='text-center mt-3'>Already Signed up.?<Link to='/login'>Login</Link></p>
